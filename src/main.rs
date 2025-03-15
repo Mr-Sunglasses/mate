@@ -1,10 +1,22 @@
 use std::process::Command;
 
+// todo: Add tests
+
 fn main() {
+    let ansi_shadow_ascii = format!("
+███╗   ███╗ █████╗ ████████╗███████╗
+████╗ ████║██╔══██╗╚══██╔══╝██╔════╝
+██╔████╔██║███████║   ██║   █████╗  
+██║╚██╔╝██║██╔══██║   ██║   ██╔══╝  
+██║ ╚═╝ ██║██║  ██║   ██║   ███████╗
+╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
+");
     let version = "0.1.0";
 
     let help = format!(
         "
+{}
+
 mate v{}
 
 Add co-authors to your git commits.
@@ -23,6 +35,7 @@ SUBCOMMANDS:
     help            Prints this message
     version         Prints version information
 ",
+        ansi_shadow_ascii,
         version
     );
 
@@ -42,6 +55,7 @@ SUBCOMMANDS:
             println!("mate v{}", version);
             return;
         }
+        // todo: Make the author name or email optional and must have atleast one of them.
         "-n" | "--name" => {
             if args.len() < 3 {
                 eprintln!("Please provide the name of the co-author. Use 'mate --help' for more information.");

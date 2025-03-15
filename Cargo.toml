@@ -2,5 +2,13 @@
 name = "mate"
 version = "0.1.0"
 edition = "2024"
+authors = ["Kanishk Pachauri <itskanishkp.py@gmail.com>"]
+license = "MIT"
+description = "A tool to easily add co-authors to your Git commits"
+readme = "README.md"
+homepage = "https://github.com/Mr-Sunglasses/mate"
+repository = "https://github.com/Mr-Sunglasses/mate"
+keywords = ["cli", "git", "co-authors"]
+categories = ["command-line-utilities"]
 
 [dependencies]
