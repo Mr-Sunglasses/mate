@@ -10,6 +10,8 @@ mate allows you to easily add co-authors to your Git commits. So that you give a
 
 ## Installation
 
+- Note: mate requires rust and cargo to installed in your computer. [Install Rust and Cargo](https://doc.rust-lang.org/stable/cargo/getting-started/installation.html)
+
 ```sh
 cargo install --git https://github.com/Mr-Sunglasses/mate
 ```
