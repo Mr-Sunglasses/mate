@@ -11,7 +11,7 @@ mate allows you to easily add co-authors to your Git commits. So that you give a
 ## Installation
 
 ```sh
-curl -L https://kanishkk.me/mate/install.sh | sh
+cargo install --git https://github.com/Mr-Sunglasses/mate
 ```
 
 - This will install mate on your computer.
