@@ -1,17 +1,18 @@
 use std::process::Command;
-
 // todo: Add tests
 
 fn main() {
-    let ansi_shadow_ascii = format!("
+    let ansi_shadow_ascii = format!(
+        "
 ███╗   ███╗ █████╗ ████████╗███████╗
 ████╗ ████║██╔══██╗╚══██╔══╝██╔════╝
 ██╔████╔██║███████║   ██║   █████╗  
 ██║╚██╔╝██║██╔══██║   ██║   ██╔══╝  
 ██║ ╚═╝ ██║██║  ██║   ██║   ███████╗
 ╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
-");
-    let version = "0.1.0";
+"
+    );
+    let version = "0.0.2";
 
     let help = format!(
         "
@@ -35,8 +36,7 @@ SUBCOMMANDS:
     help            Prints this message
     version         Prints version information
 ",
-        ansi_shadow_ascii,
-        version
+        ansi_shadow_ascii, version
     );
 
     let args: Vec<String> = std::env::args().collect();
@@ -92,7 +92,7 @@ SUBCOMMANDS:
 }
 
 fn add_co_author(name: String, email: String) {
-    // todo: Make the author name or email optional and must have atleast one of them.
+    // todo: Make the author name or email optional and must have atleast one of them in cli.
 
     let mut _author;
     if name.is_empty() || email.is_empty() {
@@ -121,6 +121,6 @@ fn add_co_author(name: String, email: String) {
     if output.success() {
         println!("Co-author added successfully.");
     } else {
-        eprintln!("Failed to add co-author.");
+        panic!("Failed to add co-author.");
     }
 }
