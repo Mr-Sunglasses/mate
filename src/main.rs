@@ -2,14 +2,16 @@ use std::process::Command;
 // todo: Add tests
 
 fn main() {
-    let ansi_shadow_ascii = format!("
+    let ansi_shadow_ascii = format!(
+        "
 ███╗   ███╗ █████╗ ████████╗███████╗
 ████╗ ████║██╔══██╗╚══██╔══╝██╔════╝
 ██╔████╔██║███████║   ██║   █████╗  
 ██║╚██╔╝██║██╔══██║   ██║   ██╔══╝  
 ██║ ╚═╝ ██║██║  ██║   ██║   ███████╗
 ╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
-");
+"
+    );
     let version = "0.1.1";
 
     let help = format!(
@@ -34,8 +36,7 @@ SUBCOMMANDS:
     help            Prints this message
     version         Prints version information
 ",
-        ansi_shadow_ascii,
-        version
+        ansi_shadow_ascii, version
     );
 
     let args: Vec<String> = std::env::args().collect();
@@ -116,7 +117,7 @@ fn add_co_author(name: String, email: String) {
         .arg(format!("--trailer={}", _author));
 
     let output = command.status().expect("Failed to execute command.");
-    
+
     if output.success() {
         println!("Co-author added successfully.");
     } else {
