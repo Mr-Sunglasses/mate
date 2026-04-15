@@ -1,5 +1,4 @@
 use std::process::Command;
-
 // todo: Add tests
 
 fn main() {
@@ -11,7 +10,7 @@ fn main() {
 ██║ ╚═╝ ██║██║  ██║   ██║   ███████╗
 ╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
 ");
-    let version = "0.1.0";
+    let version = "0.1.1";
 
     let help = format!(
         "
@@ -92,7 +91,7 @@ SUBCOMMANDS:
 }
 
 fn add_co_author(name: String, email: String) {
-    // todo: Make the author name or email optional and must have atleast one of them.
+    // todo: Make the author name or email optional and must have atleast one of them in cli.
 
     let mut _author;
     if name.is_empty() || email.is_empty() {
@@ -117,10 +116,10 @@ fn add_co_author(name: String, email: String) {
         .arg(format!("--trailer={}", _author));
 
     let output = command.status().expect("Failed to execute command.");
-
+    
     if output.success() {
         println!("Co-author added successfully.");
     } else {
-        eprintln!("Failed to add co-author.");
+        panic!("Failed to add co-author.");
     }
 }
